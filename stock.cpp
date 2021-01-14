@@ -2,7 +2,7 @@
 stock.cpp
 Author: M00714688 
 Created: 05/01/2021
-Updated: 12/05/2021
+Updated: 15/01/2021
 */
 
 #include <iostream>
@@ -107,14 +107,14 @@ void display_all()
 void restock()
 {
 
-	int no, found = 0;
+	int number, found = 0;
 	std::cout << "\n\nTo Restock";
 	std::cout << "\n\n Please Enter the item id";
-	std::cin >> no;
+	std::cin >> number;
 	fileObject.open("store.txt", std::ios::in | std::ios::out);
 	while (fileObject.read((char *)&i, sizeof(i)) && found == 0)
 	{
-		if (i.RetItmNumber() == no)
+		if (i.RetItmNumber() == number)
 		{
 			i.displaydata();
 			std::cout << "\nPleas Enter the New Detail of the Item" << std::endl;
@@ -215,14 +215,14 @@ void place_order()
 void modify()
 {
 
-	int no, found = 0;
+	int number, found = 0;
 	std::cout << "\n\nTo Update the Stock Level";
 	std::cout << "\n\n Please Enter the item id";
-	std::cin >> no;
+	std::cin >> number;
 	fileObject.open("store.txt", std::ios::in | std::ios::out);
 	while (fileObject.read((char *)&i, sizeof(i)) && found == 0)
 	{
-		if (i.RetItmNumber() == no)
+		if (i.RetItmNumber() == number)
 		{
 			i.displaydata();
 			std::cout << "\nPleas Enter the New Detail of the Item" << std::endl;
