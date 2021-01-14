@@ -1,5 +1,18 @@
-stock:stock.cpp
-	g++ -o stock stock.cpp
+CXX = g++
+CXXFLAGS = -g -Wall -Wextra 
 
+.PHONEY= all 
+
+stock: stock.cpp
+	$(CXX) $(CXXFLAGS) -o $@ stock.cpp 
+	
+	
+
+.PHONEY : clean
 clean:
-	rm -rf  *o stock
+	rm -rf *o stock
+
+
+
+
+
